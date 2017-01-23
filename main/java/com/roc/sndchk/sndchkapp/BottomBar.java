@@ -1,18 +1,56 @@
 package com.roc.sndchk.sndchkapp;
 
-import android.provider.Contacts;
+//old code
+import android.content.Context;
 import android.support.annotation.IdRes;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.widget.ActionMenuView;
 import android.view.Menu;
-
-import com.roc.sndchk.sndchkapp.Favoritesfragment;
-import com.roc.sndchk.sndchkapp.Peoplefragment;
-import com.roc.sndchk.sndchkapp.R;
 import com.roughike.bottombar.OnMenuTabClickListener;
 
+
+
+// new code 12/28
+import android.content.Intent;
+/*
+public class BottomBar extends Activity {
+
+    Button button;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_bottom_bar);
+        addListenerOnButton();
+    }
+
+    public void addListenerOnButton() {
+
+        final Context context = this;
+
+        button = (Button) findViewById(R.id.Bottombaritethree);
+
+        button.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Intent intent = new Intent(context, StoryPageActivity.class);
+                startActivity(intent);
+
+            }
+
+        });
+
+    }
+}
+*/
+
+
+
+    // old code
 public class BottomBar extends ActionBarActivity {
+
 
     com.roughike.bottombar.BottomBar mBottomBar;
 
@@ -25,11 +63,19 @@ public class BottomBar extends ActionBarActivity {
 
             @Override
             public void onMenuTabSelected(@IdRes int i) {
-                if (i == R.id.Bottombaritemfive) {
-                    Favoritesfragment f = new Favoritesfragment();
+
+
+                if (i == R.id.Bottombaritemone) {
+
+                    Feedfragment f = new Feedfragment();
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame,f).commit();
-                } else if (i == R.id.Bottombaritemone) {
-                    Peoplefragment f = new Peoplefragment();
+                } else if (i == R.id.Bottombaritemtwo) {
+
+
+                    Camerafragment f = new Camerafragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame,f).commit();
+                } else if (i == R.id.Bottombaritethree) {
+                    Favoritesfragment f = new Favoritesfragment();
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame,f).commit();
                 }
             }
@@ -44,14 +90,9 @@ public class BottomBar extends ActionBarActivity {
 
         mBottomBar.mapColorForTab(0,"#F44336");
         mBottomBar.mapColorForTab(1,"#FF6F00");
+        mBottomBar.mapColorForTab(2,"#FF6F00");
 
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_bottom_bar, menu);
-        return true;
-    }
 }

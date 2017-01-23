@@ -3,15 +3,20 @@
     <item
         android:id="@+id/Bottombaritemone"
         android:icon="@mipmap/ic_launcher"
-        android:title="People">
+        android:title="Feed">
         </item>
 
     <item
-        android:id="@+id/Bottombaritemfive"
-        android:icon="@drawable/bb_bottom_bar_top_shadow"
-        android:title="Favorites">
+        android:id="@+id/Bottombaritemtwo"
+        android:icon="@mipmap/ic_launcher"
+        android:title="Camera">
         </item>
 
+    <item
+        android:id="@+id/Bottombaritethree"
+        android:icon="@mipmap/ic_launcher"
+        android:title="Favorites">
+    </item>
 
 
 </menu>
